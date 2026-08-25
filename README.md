@@ -7,8 +7,8 @@ Official code repository for **SafeAtlas-VL: Beyond Binary Multimodal Safety wit
 ## Resources
 
 - Paper: arXiv identifier pending
-- Dataset: Hugging Face repository pending
-- Models: Hugging Face repositories pending
+- Dataset: [SafeAtlas-VL](https://huggingface.co/datasets/zrwang1211/SafeAtlas-VL)
+- Models: [SafeAtlas Guard collection](https://huggingface.co/collections/zrwang1211/safeatlas-guard)
 
 ## Planned release
 
