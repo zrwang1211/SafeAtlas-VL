@@ -1,0 +1,33 @@
+# Launch with 8 GPUs.
+model_name_or_path: Qwen/Qwen3-VL-8B-Instruct
+stage: sft
+do_train: true
+finetuning_type: full
+template: qwen3_vl_nothink
+flash_attn: auto
+
+dataset: safeatlas_train
+dataset_dir: ./outputs/safeatlas_sft
+cutoff_len: 8192
+preprocessing_num_workers: 32
+dataloader_num_workers: 0
+dataloader_persistent_workers: false
+
+output_dir: ./outputs/stage1/safeatlas_guard_8b
+overwrite_output_dir: false
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 4
+gradient_checkpointing: true
+learning_rate: 5.0e-5
+num_train_epochs: 1.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.0
+max_grad_norm: 1.0
+bf16: true
+optim: adamw_torch
+logging_steps: 10
+save_steps: 500000
+save_total_limit: 1
+plot_loss: true
+ddp_timeout: 180000000
+deepspeed: ./training/deepspeed/zero1.json

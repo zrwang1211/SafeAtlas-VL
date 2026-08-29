@@ -16,6 +16,8 @@ dist/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.uv-cache/
+.pip-cache/
 wandb/
 runs/
 outputs/

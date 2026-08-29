@@ -1,0 +1,6 @@
+Human user:
+<image>
+{request}
+
+AI assistant:
+{response}

@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safeatlas-vl"
+version = "1.0.0"
+description = "Inference and data utilities for SafeAtlas Guard"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "accelerate>=1.7",
+  "datasets>=3.0",
+  "huggingface-hub>=0.32",
+  "pillow>=10.0",
+  "safetensors>=0.4",
+  "torch>=2.6",
+  "torchvision>=0.21",
+  "transformers>=4.57,<5",
+]
+
+[project.optional-dependencies]
+train = ["llamafactory"]
+
+[project.scripts]
+ordinal-safety = "ordinal_safety_vlm.cli:main"
+safeatlas = "ordinal_safety_vlm.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/zrwang1211/SafeAtlas-VL"
+Repository = "https://github.com/zrwang1211/SafeAtlas-VL"
+Dataset = "https://huggingface.co/datasets/zrwang1211/SafeAtlas-VL"
+Models = "https://huggingface.co/collections/zrwang1211/safeatlas-guard"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ordinal_safety_vlm = ["resources/*.txt"]
