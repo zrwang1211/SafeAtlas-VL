@@ -46,7 +46,7 @@ result = predictor.predict(
 )
 
 print(result.safety_label)  # safe core
-print(f"{result.risk_score:.2f}")  # 13.76
+print(f"{result.risk_score:.2f}")
 print(result.teacher_predictions)  # {'judge1': 'safe', 'judge2': 'safe', 'judge3': 'safe'}
 ```
 

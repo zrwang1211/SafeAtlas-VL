@@ -60,13 +60,12 @@ batch size of 256 on eight GPUs. They preserve the learning rates, loss
 weights, Gaussian smoothing, and ordinal-threshold initialization used by the
 original training runs.
 
-The frozen backbone is loaded in BF16. The prediction heads are comparatively
-small, and the four learned scalar thresholds directly define the boundaries
-between the five ordinal classes. Small threshold updates can be lost at BF16
-precision, which can shift those boundaries. All head parameters, thresholds,
-and optimizer states therefore remain in FP32 and are saved in FP32. BF16
-autocast may accelerate the dense projections, while threshold construction
-and ordinal logits remain in FP32.
+The frozen backbone is loaded in BF16. The ordinal head uses four learned
+scalar thresholds to parameterize the cumulative logits for the five ordered
+classes. Because small changes to the head and threshold parameters can affect
+the resulting probability distribution, all prediction-head parameters and
+their optimizer states remain in FP32, and the exported head weights are saved
+in FP32.
 
 The Stage-2 output contains `ordinal_heads.safetensors`,
 `ordinal_config.json`, and the prompt files. A standalone release combines
