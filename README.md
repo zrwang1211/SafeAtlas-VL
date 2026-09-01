@@ -11,6 +11,7 @@ SafeAtlas-VL dataset, and the two-stage training workflow for the 2B, 4B, and
 
 ## 🔗 Resources
 
+- Paper: [SafeAtlas-VL](https://arxiv.org/abs/2608.29098)
 - Dataset: [zrwang1211/SafeAtlas-VL](https://huggingface.co/datasets/zrwang1211/SafeAtlas-VL)
 - Models: [SafeAtlas Guard collection](https://huggingface.co/collections/zrwang1211/safeatlas-guard)
 - 2B model: [zrwang1211/SafeAtlas-Guard-2B](https://huggingface.co/zrwang1211/SafeAtlas-Guard-2B)
@@ -152,4 +153,14 @@ making these projects openly available.
 
 ## 📚 Citation
 
-Citation metadata will be added after the arXiv identifier is assigned.
+```bibtex
+@misc{wang2026safeatlasvlbinarymultimodalsafety,
+  title={SafeAtlas-VL: Beyond Binary Multimodal Safety with Large-Scale Data and Guard Models},
+  author={Zongrui Wang and Xiangyang Zhu and Sicheng Wang and Han Wang and Dingyi Rong and Zeyu Zhang and Chunyi Li and Yue Shi and Kaiwei Zhang and Zicheng Zhang and Yuan Tian and Qi Jia and Yan Teng and Wei Sun and Ning Liu and Guangtao Zhai},
+  year={2026},
+  eprint={2608.29098},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  url={https://arxiv.org/abs/2608.29098},
+}
+```
